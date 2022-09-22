@@ -7,6 +7,7 @@ import { NxWelcomeComponent } from './nx-welcome.component';
 import { RouterModule, Routes } from '@angular/router';
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { ComponentLoaderDirective } from './component-loader.directive';
+import { WebComponentWrapper, WebComponentWrapperOptions } from '@angular-architects/module-federation-tools';
 
 const routes: Routes = [
   {
@@ -19,6 +20,16 @@ const routes: Routes = [
       }).then((m) => m.AbcModule);
     },
   },
+  {
+    path: 'wc',
+    component: WebComponentWrapper,
+    data: {
+      remoteEntry: 'http://localhost:3000/remoteEntry.js',
+      remoteName: 'angular3',
+      exposedModule: './web-components',
+      elementName: 'angular3-element'
+    } as WebComponentWrapperOptions
+  }, 
 ];
 
 @NgModule({

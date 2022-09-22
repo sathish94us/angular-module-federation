@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { StoreService } from '@mf/store';
 
 @Component({
   selector: 'mf-abc',
@@ -6,7 +8,18 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./abc.component.css'],
 })
 export class AbcComponent implements OnInit {
-  constructor() {}
+  constructor(private router: Router, private storeService: StoreService) {}
 
-  ngOnInit(): void {}
+  ngOnInit(): void {
+    console.log(this.router)
+    console.log(`abc ${this.storeService.getUserName()}`)
+  }
+
+  getStore() {
+    console.log(this.storeService)
+  }
+
+  setStore() {
+    this.storeService.setUserName(<any>Date.now())
+  }
 }

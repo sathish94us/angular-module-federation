@@ -10,11 +10,13 @@
     "test": "nx test",
     "run:all": "node node_modules/@angular-architects/module-federation/src/server/mf-dev-server.js",
     "start:shell": "nx run shell:serve:development",
-    "start:remote": "nx run remote:serve:development"
+    "start:remote": "nx run remote:serve:development",
+    "create-lib": "nx g @nrwl/angular:library"
   },
   "private": true,
   "dependencies": {
     "@angular-architects/module-federation": "^14.3.9",
+    "@angular-architects/module-federation-tools": "^14.3.9",
     "@angular/animations": "~14.0.0",
     "@angular/common": "~14.0.0",
     "@angular/compiler": "~14.0.0",

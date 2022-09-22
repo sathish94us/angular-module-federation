@@ -1,5 +1,6 @@
 import { loadRemoteModule } from '@angular-architects/module-federation';
 import { Component, ComponentFactoryResolver, OnInit, ViewContainerRef } from '@angular/core';
+import { StoreService } from '@mf/store';
 
 @Component({
   selector: 'mf-root',
@@ -10,7 +11,8 @@ export class AppComponent implements OnInit {
   title = 'shell';
   constructor(
     private cfr: ComponentFactoryResolver,
-    private vcref: ViewContainerRef
+    private vcref: ViewContainerRef,
+    private storeService: StoreService
   ) {
     fetch('');
   }
@@ -26,5 +28,17 @@ export class AppComponent implements OnInit {
     // this.vcref.createComponent(
     //   this.cfr.resolveComponentFactory(TestMfeComponent)
     // );
+
+    this.storeService.setUserName('Sathish')
+    console.log(this.storeService.getUserName())
+  }
+
+  getStore() {
+    console.log('shell')
+    console.log(this.storeService)
+  }
+
+  setStore() {
+    this.storeService.setUserName(<any>Date.now())
   }
 }

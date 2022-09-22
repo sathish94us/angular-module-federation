@@ -5,6 +5,7 @@
     "remote": "apps/remote",
     "remote-e2e": "apps/remote-e2e",
     "shell": "apps/shell",
-    "shell-e2e": "apps/shell-e2e"
+    "shell-e2e": "apps/shell-e2e",
+    "store": "libs/store"
   }
 }
